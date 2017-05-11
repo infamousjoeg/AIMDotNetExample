@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// Use the following NetPasswordSDK namespaces
 using CyberArk.AIM.NetPasswordSDK;
 using CyberArk.AIM.NetPasswordSDK.Exceptions;
 
@@ -26,6 +27,7 @@ namespace AIMDotNetExample
                 PSDKPasswordRequest passRequest = new PSDKPasswordRequest();
                 PSDKPassword password;
 
+                // Set passRequest hash table variables
                 passRequest.AppID = "RESTExamples";
                 passRequest.ConnectionPort = 18923;
                 passRequest.ConnectionTimeout = 30;
@@ -33,6 +35,8 @@ namespace AIMDotNetExample
                 passRequest.Folder = "Root";
                 passRequest.Object = "Database-MicrosoftSQLServer-JG-sql01.joe-garcia.local-Svc_BambooHR";
                 passRequest.Reason = "Testing Application - Connect to SQL";
+
+                // Set RequiredProperties to be returned in addition to the Password
                 passRequest.RequiredProperties.Add("PolicyId");
                 passRequest.RequiredProperties.Add("UserName");
                 passRequest.RequiredProperties.Add("Address");
@@ -59,6 +63,7 @@ namespace AIMDotNetExample
             }
             catch (PSDKException ex)
             {
+                // Displays MessageBox showing error returned
                 string message = ex.Reason;
                 string caption = "Error";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
