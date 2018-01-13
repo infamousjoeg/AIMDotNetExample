@@ -15,7 +15,7 @@ AIMDotNetExample was tested on the following configuration:
 * Visual Studio 2015 for referencing NetPasswordSDK.dll
     * You will need to provide your own NetPasswordSDK.dll file from the ApplicationIdentityManagerSDK
 * Enterprise Password Vault (EPV) version 9.9
-* Application Identity Manager (AIM) Credential Provider (CCP) version 9.9
+* Application Identity Manager (AIM) Credential Provider (CP) version 9.9
 
 ### Todos
 
